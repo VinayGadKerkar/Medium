@@ -39,7 +39,7 @@ export default function SignupInt(){
         </div>
 
         <div className="py-2 font-bold">Username</div>
-        <input type="text" className="border border-gray-200 border-2 w-full p-1 rounded bg-stone-200" onChange={(e) =>{
+        <input type="text" className="border border-gray-500 border-2 w-full p-1 rounded bg-stone-200" onChange={(e) =>{
           setAuthorDetails({
             ...authorDetails , 
             name:e.target.value
@@ -47,7 +47,7 @@ export default function SignupInt(){
         }}/>
 
         <div className="py-2 font-bold">Email</div>
-        <input type="text" className="border border-gray-200 border-2 w-full p-1 rounded bg-stone-200" onChange={(e) =>{
+        <input type="text" className="border border-gray-500 border-2 w-full p-1 rounded bg-stone-200" onChange={(e) =>{
           setAuthorDetails({
             ...authorDetails , 
             email:e.target.value
@@ -55,7 +55,7 @@ export default function SignupInt(){
         }}/>
 
         <div className="py-2 font-bold">Password</div>
-        <input type="password" className=" border border-gray-200 border-2 w-full p-1 rounded bg-stone-200" onChange={(e) =>{
+        <input type="password" className=" border border-gray-500 border-2 w-full p-1 rounded bg-stone-200" onChange={(e) =>{
           setAuthorDetails({
             ...authorDetails , 
             password:e.target.value
