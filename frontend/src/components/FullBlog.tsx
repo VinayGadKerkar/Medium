@@ -31,7 +31,7 @@ import { Avatar } from "./BlogsCompo";
                         {blog.user.name}
                     </div>
                     <div className="pt-2 text-slate-500">
-                        Random catch phrase about the author's ability to grab the user's attention
+                        {blog.user.description}
                     </div>
                 </div>
             </div>  

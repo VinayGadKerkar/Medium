@@ -13,7 +13,8 @@ export interface Blogs {
     authorId:string,
     publishedDate:string,
     user :{
-        name:string
+        name:string,
+        description:string
     }
 }
 
@@ -45,6 +46,7 @@ export interface Blogs {
  }
  type UserDetails = {
     name: string,
+    description:string,
     posts: 
         {
             id: string,
@@ -62,6 +64,7 @@ export interface Blogs {
     const [loading , setLoading] = useState(true);
     const [details , setDetails] = useState<UserDetails>({
         name:"",
+        description:"",
         posts:[]
     })
     useEffect(() =>{

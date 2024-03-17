@@ -40,10 +40,10 @@ blogRouter.post('/', async (c) => {
 
       const body = await c.req.json();
       const response = createBlogInput.safeParse(body);
-       if(!response.success){
+      if (!response.success) {
          c.status(411);
          c.json({
-            message:"Invalid Inputs"
+            message: "Invalid Inputs"
          })
       }
       const userId = c.get("userId")
@@ -77,10 +77,10 @@ blogRouter.put('/update', async (c) => {
 
       const body = await c.req.json();
       const response = updateBlogInput.safeParse(body);
-       if(!response.success){
+      if (!response.success) {
          c.status(411);
          c.json({
-            message:"Invalid Inputs"
+            message: "Invalid Inputs"
          })
       }
       const blog = await prisma.post.update({
@@ -109,19 +109,20 @@ blogRouter.get('/bulk', async (c) => {
    const prisma = new PrismaClient({
       datasourceUrl: c.env.DATABASE_URL,
    }).$extends(withAccelerate())
-   try{
+   try {
 
       const blogs = await prisma.post.findMany({
-         select:{
-            title:true ,
-            content : true ,
-            id:true ,
-            authorId:true,
-            publishedDate:true,
-            user:{
-                 select :{
-                  name:true
-                 }
+         select: {
+            title: true,
+            content: true,
+            id: true,
+            authorId: true,
+            publishedDate: true,
+            user: {
+               select: {
+                  name: true,
+                  description:true 
+               }
             }
          }
       });
@@ -140,25 +141,26 @@ blogRouter.get('/:id', async (c) => {
       datasourceUrl: c.env.DATABASE_URL,
    }).$extends(withAccelerate())
    const id = c.req.param("id");
-   try{
+   try {
 
       const blog = await prisma.post.findFirst({
          where: {
             id: id
-         } , 
-         select:{
-            title:true ,
-            content:true,
-            authorId:true,
-            publishedDate:true,
-            user:{
-               select:{
-                  name:true
+         },
+         select: {
+            title: true,
+            content: true,
+            authorId: true,
+            publishedDate: true,
+            user: {
+               select: {
+                  name: true,
+                  description:true
                }
             }
          }
       })
-   
+
       return c.json(
          blog
       )

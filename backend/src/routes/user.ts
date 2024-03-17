@@ -94,7 +94,7 @@ import { signininput, signupinput } from '@vinay!2/project-common'
     }
  
  })
- userRouter.use('/getuser', async (c, next) => {
+ userRouter.use('/getuser/*', async (c, next) => {
    const header = c.req.header("Authorization") || "";
    const token = header.split(" ")[1];
    const response = await verify(token, c.env.JWT_SECRET);
@@ -109,6 +109,43 @@ import { signininput, signupinput } from '@vinay!2/project-common'
 
 
 })
+userRouter.put('/getuser/update' , async (c) =>{
+   const prisma = new PrismaClient({
+      datasourceUrl: c.env.DATABASE_URL,
+   }).$extends(withAccelerate())
+   const body = await c.req.json();
+   const id = c.get("userId");
+   try{
+
+      const user = await prisma.user.update({
+         where:{
+            id:id
+         },
+         data:{
+            name:body.name,
+            description:body.description ||""
+            
+         }
+      })   
+      if(!user){
+         c.status(403);
+         return c.json({
+            message:"Could Not update details"
+         })
+      }
+      return c.json({
+         message:"User Updated"
+      });
+   }
+   catch(e){
+      c.status(403);
+      c.json({
+         message: "ERROR"
+      })
+    }
+ 
+ })
+ 
 
  userRouter.get('/getuser/:id' , async (c) =>{
    const prisma = new PrismaClient({
@@ -123,6 +160,7 @@ import { signininput, signupinput } from '@vinay!2/project-common'
          },
          select:{
             name:true,
+            description:true,
             posts:true
          }
       })   

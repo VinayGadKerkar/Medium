@@ -8,6 +8,7 @@ import { PublishBlog } from './routes/Publish'
 import { UserDetails } from './routes/UserDetails'
 import { RecoilRoot } from 'recoil'
 import { UpdateBlog } from './routes/UpdateBlogs'
+import { UpdateUser } from './routes/UpdateUser'
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
               <Route path='/publish' element={<PublishBlog></PublishBlog>}></Route>
               <Route path='/user/:id' element={<UserDetails></UserDetails>}></Route>
               <Route path='/update/:id' element={<UpdateBlog></UpdateBlog>}></Route>
+              <Route path='/update/user' element={<UpdateUser></UpdateUser>}></Route>
             </Routes>
 
           </BrowserRouter>

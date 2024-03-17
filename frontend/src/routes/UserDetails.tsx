@@ -24,9 +24,18 @@ export function UserDetails() {
     }
     return <div>
         <AppBar />
-        <div></div>
-        <div className="flex justify-center m-12 w-[65%]">
+        <div className="flex justify-center  w-[70%]">
+            <div className="flex justify-end w-full">
+                <button className="w-28 h-6 bg-slate-600 text-white rounded " onClick={() =>{
+                    navigate('/update/user');
+                }}>Update User</button>
+            </div>
+        </div>
+        <div className="flex justify-center mx-12  mb-12 w-[85%]">
+
+
             <div>
+
                 <div className="flex h-24 ">
                     <div className="flex justify-center flex-col pr-14" >
                         <div className=" flex justify center flex-col relative inline-flex items-center justify-center w-16 h-16 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
@@ -34,8 +43,16 @@ export function UserDetails() {
                         </div>
                     </div>
                     <div className="text-lg">
-                        {details.name}
+                        <div className="mb-4">
+                            {details.name}
+                        </div>
+                        <div className="">
+                            {details.description}
+                        </div>
+
                     </div>
+
+
 
                 </div>
 
@@ -58,7 +75,7 @@ export function UserDetails() {
                             </Link>
                             <div className="flex justify-end pb-2">
 
-                                <button className="w-24 h-6 bg-blue-600 rounded-full mr-4" onClick={() => {
+                                <button className="w-28 h-6 bg-blue-600 rounded-full mr-4" onClick={() => {
                                     navigate(`/update/${blog.id}`);
                                 }}>Update Blog</button>
                             </div>
