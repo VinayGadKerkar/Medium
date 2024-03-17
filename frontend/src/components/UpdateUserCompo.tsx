@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { AppBar } from "./App";
-import { useRecoilValue, useRecoilValueLoadable } from "recoil";
-import { UserDetails } from "../blogAtom/atoms";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
 import swal from "sweetalert";
@@ -48,7 +46,7 @@ export function UpdateUserCompo() {
                     <div className=" w-full">
                         <div className="py-2">Name</div>
                         <input type="text" defaultValue={details.name} className="border border-slate-300 border-1 w-full h-8 p-2 bg-stone-200" onChange={(e) => {
-                           e.target.value == "" ? setUserDetails(userDetails) : setUserDetails({...userDetails,
+                            setUserDetails({...userDetails,
                             name:e.target.value
                         });
                         }} />
@@ -56,7 +54,7 @@ export function UpdateUserCompo() {
                     <div className=" w-full">
                         <div className="py-2">Decription</div>
                         <textarea id="editor" rows={4} placeholder="Add description" defaultValue={details.description} className="block border border-slate-300 border-1 w-full p-2 mt-2 bg-stone-200" required onChange={(e) => {
-                           e.target.value == "" ? setUserDetails(userDetails) : setUserDetails({...userDetails,
+                            setUserDetails({...userDetails,
                             description:e.target.value
                         });
                         }} />
@@ -65,9 +63,9 @@ export function UpdateUserCompo() {
                         <button className="w-36 h-8 bg-blue-600 rounded mt-2 text-white" onClick={async () => {
                             try {
 
-                                const user = await axios.put(`${BACKEND_URL}/api/v1/user/getuser/update`, {
-                                    name:userDetails.name,
-                                    description:userDetails.description
+                                await axios.put(`${BACKEND_URL}/api/v1/user/getuser/update`, {
+                                    name: userDetails.name == ""?details.name:userDetails.name,
+                                    description: userDetails.description == ""?details.description:userDetails.description
                                 },
                                     {
                                         headers: {
