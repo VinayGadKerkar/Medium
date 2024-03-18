@@ -60,7 +60,7 @@ export function UserDetails() {
             </div>
         </div>
         <div className="flex justify-center ">
-            <div className="w-[50%]">
+            <div className="lg:w-[50%]">
                 <div className="text-xl p-2 border-b-2 border-slate-500 text-center w-24 ">Posts</div>
 
                 {details.posts.map(blog => {
