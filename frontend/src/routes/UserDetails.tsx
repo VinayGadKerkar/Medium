@@ -67,7 +67,7 @@ export function UserDetails() {
 
                     return <div className="m-2">
 
-                        <div className=" max-w-xl shadow-lg">
+                        <div className=" max-w-full shadow-lg">
                             <Link to={`/blog/${blog.id}`}>
 
                                 <BlogCompo author={details.name} title={blog.title} content={blog.content} publishedDate={blog.publishedDate} authorId={blog.authorId} />

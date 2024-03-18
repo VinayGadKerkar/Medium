@@ -27,7 +27,7 @@ import { signininput, signupinput } from '@vinay!2/project-common'
        const response = signupinput.safeParse(body);
        if(!response.success){
          c.status(411);
-         c.json({
+         return c.json({
             message:"Invalid Inputs"
          })
        }
@@ -45,9 +45,12 @@ import { signininput, signupinput } from '@vinay!2/project-common'
        })
     }
     catch(e){
+      console.log(e);
       c.status(403);
-      c.json({
-         message: "ERROR"
+      return c.json({
+         message: "ERROR",
+         err:e
+         
       })
     }
  }) 
@@ -63,7 +66,7 @@ import { signininput, signupinput } from '@vinay!2/project-common'
        const response = signininput.safeParse(body);
        if(!response.success){
          c.status(411);
-         c.json({
+         return c.json({
             message:"Invalid Inputs"
          })
       }
@@ -88,7 +91,7 @@ import { signininput, signupinput } from '@vinay!2/project-common'
     }
     catch(e){
       c.status(403);
-      c.json({
+      return c.json({
          message: "ERROR"
       })
     }
