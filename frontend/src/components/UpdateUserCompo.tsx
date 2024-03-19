@@ -6,6 +6,7 @@ import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 import { useUserDetails } from "../hooks/blogs";
 import { SingleBlogSkeleton } from "../Skeletons/SingleBlogSkel";
+import { UpdateUserSkel } from "../Skeletons/UserUpdateSkel";
 
 type userType = {
     name: string,
@@ -30,7 +31,7 @@ export function UpdateUserCompo() {
     if(loading){
         return <div>
              <AppBar />
-             <SingleBlogSkeleton></SingleBlogSkeleton>
+             <UpdateUserSkel/>
         </div>
     }
 
@@ -38,7 +39,7 @@ export function UpdateUserCompo() {
 
         <AppBar />
         <div className="flex justify-center bg-stone-200 h-screen">
-            <div className="border-gray-200  m-10 w-[50%] h-[85%] border border-gray-200 border-2 bg-white rounded">
+            <div className="border-gray-200  m-10 w-full md:w-[50%] h-[85%] border border-gray-200 border-2 bg-white rounded">
                 <div className="grid place-items-center m-5 font-sans">
 
                     <div className="p-2 font-bold text-3xl">Update User</div>

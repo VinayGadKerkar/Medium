@@ -6,13 +6,13 @@ export function UserSkeleton() {
 
 
         <div role="status" className=" animate-pulse">
-            <div className="flex justify-center m-12 w-[85%]">
+            <div className="flex justify-center m-12 w-full md:w-[85%]">
                 <div>
                     <div className="flex h-24 ">
                         <div className="flex justify-center flex-col mr-14" >
                             <div className="h-24 w-20 bg-gray-200 rounded-full dark:bg-gray-700  mb-4"></div>
                         </div>
-                        <div className="w-34 text-lg m-2 w-64">
+                        <div className=" w-28 md:w-34 text-lg m-2 w-64">
                             <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
                             <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
                             <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>

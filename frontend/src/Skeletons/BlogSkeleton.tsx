@@ -5,7 +5,7 @@ export function BlogSkeleton() {
     return <div className="">
 
         <div className="flex justify-center ">
-            <div className="w-[50%]">
+            <div className="w-full md:w-[50%]">
                 <div role="status" className=" animate-pulse">
                     <div className=" m-12">
                         <div className="flex my-2">

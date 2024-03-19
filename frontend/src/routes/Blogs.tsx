@@ -20,7 +20,7 @@ export function Blogs() {
       <AppBar />
 
       <div className="flex justify-center bg-stone-200">
-         <div className="lg:w-[50%] ">
+         <div className="md:w-[50%] ">
 
             {blogs.map(blog => {
                return <Link to={`/blog/${blog.id}`}>

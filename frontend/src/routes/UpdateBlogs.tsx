@@ -4,6 +4,7 @@ import { AppBar } from "../components/App";
 import {  useParams } from "react-router-dom";
 import { blogFamily } from "../blogAtom/atoms";
 import { UpdateCompo } from "../components/UpdateCompo";
+import { UpdateBlogSkel } from "../Skeletons/UpdateBlogSkel";
 
 
 export function UpdateBlog() {
@@ -13,7 +14,7 @@ export function UpdateBlog() {
     if (blog.state == "loading") {
         return <div>
             <AppBar />
-            <SingleBlogSkeleton />
+            <UpdateBlogSkel/>
         </div>
     }
     return <div className="bg-stone-200 w-screen h-screen" >

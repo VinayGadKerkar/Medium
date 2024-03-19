@@ -21,7 +21,7 @@ export function UpdateCompo({ id, blog }: { id: string, blog: Blogs }) {
 
     return <div>
         <div className="flex justify-center ">
-            <div className="w-[50%] pt-6 ">
+            <div className="w-full pt-6 m-4 md:w-[50%] pt-6 ">
                 <input type="text" defaultValue={blog.title} className="border border-slate-300 border-1 w-full h-8 p-2 bg-stone-200" onChange={(e) => {
                     setBlogDetails({...blogDetails,
                         title:e.target.value

@@ -15,7 +15,7 @@ export function PublishBlog(){
     return <div>
         <AppBar/>
         <div className="flex justify-center "> 
-        <div className="w-[50%] pt-6 ">
+        <div className=" w-full m-4 md:w-[50%] pt-6 ">
             <input type="text" placeholder="Title" className="border border-slate-300 border-1 w-full h-8 p-2 bg-stone-200" onChange={(e) =>{
                 setTitle(e.target.value)
             }}/>

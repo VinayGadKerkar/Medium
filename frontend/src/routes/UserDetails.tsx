@@ -24,7 +24,7 @@ export function UserDetails() {
     }
     return <div>
         <AppBar />
-        {id == localStorage.getItem("userId") ? <div className="flex justify-center  w-[70%]">
+        {id == localStorage.getItem("userId") ? <div className="flex justify-center md:w-[70%]">
             <div className="flex justify-end w-full">
                 <button className="w-28 h-6 bg-slate-600 text-white rounded " onClick={() => {
                     navigate('/update/user');
@@ -36,7 +36,7 @@ export function UserDetails() {
 
           
 
-                <div className="flex h-36 w-[50%] " >
+                <div className="flex h-36 w-full md:w-[50%] " >
                     <div className="flex justify-center flex-col pr-14" >
                         <div className=" flex justify center flex-col relative inline-flex items-center justify-center w-16 h-16 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
                             <span className="font-sm text-gray-600 dark:text-gray-300 text-5xl">{details.name[0]}</span>
