@@ -5,7 +5,6 @@ import { BACKEND_URL } from "../config";
 import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 import { useUserDetails } from "../hooks/blogs";
-import { SingleBlogSkeleton } from "../Skeletons/SingleBlogSkel";
 import { UpdateUserSkel } from "../Skeletons/UserUpdateSkel";
 
 type userType = {

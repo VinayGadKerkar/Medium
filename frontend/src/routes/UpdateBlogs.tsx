@@ -1,5 +1,4 @@
 import { useRecoilValueLoadable } from "recoil";
-import { SingleBlogSkeleton } from "../Skeletons/SingleBlogSkel";
 import { AppBar } from "../components/App";
 import {  useParams } from "react-router-dom";
 import { blogFamily } from "../blogAtom/atoms";
