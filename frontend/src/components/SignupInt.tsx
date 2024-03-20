@@ -20,7 +20,7 @@ export default function SignupInt(){
         const userId = userCreated.data.userId;
         localStorage.setItem("token" , token);
         localStorage.setItem("userId" ,userId);
-        swal("Congrats!", ", Your account is created!", "success");
+        swal("Congrats!", "Your account is created!", "success");
         navigate("/blogs");
       }
       catch(e){

@@ -20,7 +20,7 @@ export default function SigninInt(){
         const userId = userCreated.data.userId;
         localStorage.setItem("token" , token);
         localStorage.setItem("userId" ,userId);
-        swal("Congrats!", ", You are signed in!", "success");
+        swal("Congrats!", "You are signed in!", "success");
         navigate("/blogs")
       }
       catch(e){
