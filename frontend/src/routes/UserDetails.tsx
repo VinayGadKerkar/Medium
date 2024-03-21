@@ -5,6 +5,8 @@ import { BlogCompo } from "../components/BlogsCompo";
 import { UserSkeleton } from "../Skeletons/UserSkeleton";
 import { BlogSkeleton } from "../Skeletons/BlogSkeleton";
 
+
+
 export function UserDetails() {
     const navigate = useNavigate();
     const { id } = useParams();
@@ -90,6 +92,14 @@ export function UserDetails() {
 
 
         </div>
+        {details.admin?<div className="absolute bottom-0 right-0 h-16 w-16 mx-14">
+            <div className="relative h-32 w-32 ">
+
+            <button className="bg-slate-300 rounded w-24 h-8" onClick={() =>{
+                navigate('/admin/getusers')
+            }}>Getusers</button>
+            </div>
+        </div>:null}
     </div>
 
 }

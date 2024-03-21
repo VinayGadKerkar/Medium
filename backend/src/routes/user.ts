@@ -164,7 +164,8 @@ userRouter.put('/getuser/update' , async (c) =>{
          select:{
             name:true,
             description:true,
-            posts:true
+            posts:true,
+            admin:true
          }
       })   
       if(!user){

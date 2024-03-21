@@ -5,6 +5,7 @@ import { sign , verify } from 'hono/jwt'
 import { userRouter } from './routes/user'
 import { blogRouter } from './routes/blogs'
 import { cors } from 'hono/cors'
+import { adminRouter } from './routes/admin'
 
 const app = new Hono<{
    Bindings:{
@@ -17,7 +18,8 @@ const app = new Hono<{
    }
 }>()
 
-app.use('/*', cors())
+app.use('/*', cors());
+app.route("api/v1/admin" , adminRouter);
 app.route("api/v1/user" , userRouter);
 app.route("api/v1/blog" , blogRouter);
 

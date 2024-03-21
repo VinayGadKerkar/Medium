@@ -148,12 +148,14 @@ blogRouter.get('/:id', async (c) => {
             id: id
          },
          select: {
+            id:true,
             title: true,
             content: true,
             authorId: true,
             publishedDate: true,
             user: {
                select: {
+                  id:true,
                   name: true,
                   description:true
                }

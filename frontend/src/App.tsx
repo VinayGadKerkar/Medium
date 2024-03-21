@@ -9,6 +9,8 @@ import { UserDetails } from './routes/UserDetails'
 import { RecoilRoot } from 'recoil'
 import { UpdateBlog } from './routes/UpdateBlogs'
 import { UpdateUser } from './routes/UpdateUser'
+import AdminSignupInt from './components/AdminSignup'
+import { AllUsers } from './routes/AllUsers'
 
 function App() {
 
@@ -29,6 +31,8 @@ function App() {
               <Route path='/user/:id' element={<UserDetails></UserDetails>}></Route>
               <Route path='/update/:id' element={<UpdateBlog></UpdateBlog>}></Route>
               <Route path='/update/user' element={<UpdateUser></UpdateUser>}></Route>
+              <Route path='/admin/signup' element={<AdminSignupInt></AdminSignupInt>}></Route>
+              <Route path='/admin/getusers' element={<AllUsers/>}></Route>
             </Routes>
 
           </BrowserRouter>

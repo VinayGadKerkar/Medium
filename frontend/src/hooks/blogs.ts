@@ -13,6 +13,7 @@ export interface Blogs {
     authorId:string,
     publishedDate:string,
     user :{
+        id:string,
         name:string,
         description:string
     }
@@ -47,6 +48,7 @@ export interface Blogs {
  type UserDetails = {
     name: string,
     description:string,
+    admin:boolean,
     posts: 
         {
             id: string,
@@ -65,6 +67,7 @@ export interface Blogs {
     const [details , setDetails] = useState<UserDetails>({
         name:"",
         description:"",
+        admin:false,
         posts:[]
     })
     useEffect(() =>{
@@ -88,5 +91,38 @@ export interface Blogs {
     return {
         loading ,
         details
+    }
+ }
+
+ type Users = {
+    email:string,
+    name:string,
+    id:string
+ }
+
+ export function useUsers(){
+    const [loading , setLoading] = useState(true);
+    const [users , setUsers] = useState<Users[]>([]);
+    useEffect(() =>{
+        try{
+
+            axios.get(`${BACKEND_URL}/api/v1/admin/delete/users`,{
+                headers:{
+                    Authorization: "Bearer " +localStorage.getItem("token")
+                }
+            })
+            .then((res) => {
+                setUsers(res.data);
+                setLoading(false);
+            })
+        }
+        catch{
+            swal ( "Oops" ,  "Something went wrong!" ,  "error" );
+        }
+    } ,[])
+    
+    return {
+        loading ,
+        users
     }
  }
